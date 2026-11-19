@@ -76,7 +76,39 @@ body{background:var(--p-bg);color:var(--p-ink)}
 .section h2{font-weight:800}
 .t-label{font-family:'Syne';font-weight:700;font-size:22px;color:#ff7a3c}
 .footer{background:#f5efe3;color:#0e3b3a}
+.footer :is(a,dt,dd,small,p,address,h2,.t-label,.link){color:#0e3b3a!important}
 @media(prefers-reduced-motion:reduce){.sk-orb{animation:none}}
+
+
+main>section:not(.hero){height:auto!important;min-height:0}
+main>section.ly{padding:clamp(72px,9vw,140px) 0!important}
+main>section:not(.hero)>.wrap{height:auto!important}
+main>section:not(.hero)>.wrap:not(.pz-split):not(.bk-tl):not(.im-grid):not(.em-visit){display:block!important}
+.wrap.pz-split,.wrap.bk-tl,.wrap.im-grid,.wrap.em-visit{display:grid!important}
+.dn-visit .wrap{display:grid!important}
+.em-head{display:flex}
+.ly{padding:clamp(72px,9vw,140px) 0}
+.ly .wrap{max-width:1296px;margin:0 auto;padding:0 var(--gutter,24px)}
+.ly h2{font-family:var(--font-display);font-weight:var(--display-weight);letter-spacing:var(--display-tracking);font-size:clamp(36px,5.2vw,76px);line-height:1}
+.ly img{display:block;width:100%;height:100%;object-fit:cover}
+
+.em-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:48px}
+.em-tabs{display:flex;gap:8px}
+.em-tab{font:700 17px 'Syne';padding:14px 26px;border:1.5px solid rgba(245,239,227,.4);background:none;color:inherit;border-radius:999px;cursor:pointer;transition:all .25s}
+.em-tab:hover{border-color:#ff7a3c}.em-tab.on{background:#ff7a3c;color:#0e1f1e;border-color:#ff7a3c}
+.em-pane{display:none;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:center}
+.em-pane.on{display:grid;animation:emin .6s cubic-bezier(.2,.8,.1,1)}
+@keyframes emin{from{opacity:0;transform:translateX(30px)}}
+.em-pane figure{margin:0;aspect-ratio:4/3;overflow:hidden;clip-path:polygon(10% 0,100% 0,100% 100%,0 100%)}
+.em-pane .rows li{padding:18px 0;font-size:20px}
+.em-split{display:grid;grid-template-columns:1fr 1fr;min-height:70svh}
+.em-a,.em-b{padding:clamp(40px,8vw,120px) clamp(24px,5vw,80px);display:flex;flex-direction:column;justify-content:center;gap:18px}
+.em-a{background:#ff7a3c;color:#0e1f1e}.em-a .t-label{color:#0e1f1e}.em-b{background:#14504e}
+.em-split h2{font-size:clamp(30px,3.6vw,54px);line-height:1.05;max-width:16ch}
+.em-visit{display:grid;grid-template-columns:1.2fr 1fr auto;gap:40px;align-items:center}
+.em-visit address{font:700 24px 'Syne';font-style:normal;margin-top:14px}
+.em-visit .hours{display:grid;grid-template-columns:auto auto;gap:6px 24px}
+@media(max-width:900px){.em-pane.on{grid-template-columns:1fr}.em-split{grid-template-columns:1fr}.em-visit{grid-template-columns:1fr}.em-pane figure{order:-1}}
 
 </style>
 <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
@@ -112,42 +144,10 @@ body{background:var(--p-bg);color:var(--p-ink)}
     </div></div>
   </section>
 
-  <section class="section" id="visit" data-place="visit" aria-labelledby="visit-h" style="--h: 1">
-    <div class="wrap grid grid--top">
-      <div class="span-6">
-        <div class="visit visit--card">
-          <div class="visit__head"><h2 id="visit-h">Besuch</h2></div>
-          <div class="visit__cols">
-            <div class="visit__col">
-              <address class="visit__address">Mayen<br>Innenstadt</address>
-            </div>
-            <div class="visit__col">
-              <dl class="hours" data-assumed><dt>Montag bis Samstag</dt><dd>11:00 bis 22:00</dd><dt>Sonntag</dt><dd>12:00 bis 21:00</dd><dt>Lieferung</dt><dd>bis 21:30</dd></dl>
-            </div>
-          </div>
-        </div>
-      </div>
-      <figure class="pl-photo pl-photo--end span-6 start-7" style="--pl-r: .8"><img src="assets/img/photo-f114853886-500.jpg" width="500" height="667" alt="Döner im Brot mit Salat und Tomaten" loading="lazy" decoding="async" data-source="stand-in" style="object-position:50% 50%"></figure>
-    </div>
-  </section>
-
-  <section class="section" id="karte" aria-labelledby="karte-h" style="--h: 2">
-    <div class="wrap">
-      <div class="section-head--split">
-        <h2 id="karte-h">Die Karte</h2>
-        <p>Alle Preise inklusive Steuer. <a class="link" href="#visit">Zur Anfahrt</a></p>
-      </div>
-      <div class="grid grid--top" style="margin-top:56px"><div class="span-4"><h3 class="t-label">Döner</h3><ul class="rows"><li><span class="rows__name">Döner Tasche</span><span class="rows__value" data-assumed>7,00 €</span></li><li><span class="rows__name">Dürüm</span><span class="rows__value" data-assumed>7,50 €</span></li><li><span class="rows__name">Döner Teller</span><span class="rows__value" data-assumed>10,00 €</span></li><li><span class="rows__name">Vegetarisch</span><span class="rows__value" data-assumed>6,50 €</span></li></ul></div><div class="span-4"><h3 class="t-label">Pizza</h3><ul class="rows"><li><span class="rows__name">Margherita</span><span class="rows__value" data-assumed>8,00 €</span></li><li><span class="rows__name">Salami</span><span class="rows__value" data-assumed>9,50 €</span></li><li><span class="rows__name">Funghi</span><span class="rows__value" data-assumed>9,00 €</span></li><li><span class="rows__name">Hawaii</span><span class="rows__value" data-assumed>9,50 €</span></li></ul></div><div class="span-4"><h3 class="t-label">Getränke</h3><ul class="rows"><li><span class="rows__name">Ayran</span><span class="rows__value" data-assumed>2,00 €</span></li><li><span class="rows__name">Cola 0,33 l</span><span class="rows__value" data-assumed>2,50 €</span></li><li><span class="rows__name">Wasser</span><span class="rows__value" data-assumed>2,00 €</span></li><li><span class="rows__name">Tee</span><span class="rows__value" data-assumed>2,00 €</span></li></ul></div></div>
-      
-    </div>
-  </section>
-
-  <section class="section" id="roesterei" data-moment="photo-chapters" aria-labelledby="roesterei-h">
-    <div class="wrap mo-ph">
-      <div class="mo-ph__head"><h2 id="roesterei-h">Aus der Küche</h2><p>Zwei Dinge, die bei uns den ganzen Tag laufen.</p></div>
-      <ol class="mo-ph__list"><li class="mo-ph__ch"><figure class="mo-ph__pic"><img src="assets/img/photo-f199124300-500.jpg" width="500" height="667" alt="Ein Dönerspieß dreht sich vor dem Grill" loading="lazy" decoding="async" data-source="stand-in" style="object-position:50% 50%"></figure><h3>Der Spieß</h3><p>Frisch aufgesteckt, langsam gegart.</p></li><li class="mo-ph__ch"><figure class="mo-ph__pic"><img src="assets/img/photo-f23064597-960.jpg" srcset="assets/img/photo-f23064597-500.jpg 500w, assets/img/photo-f23064597-960.jpg 960w" width="960" height="640" alt="Eine Pizza wird auf der Schaufel in den Ofen geschoben" loading=lazy decoding="async" data-source="stand-in" style="object-position:50% 50%" ></figure><h3>Der Ofen</h3><p>Pizza kommt direkt auf den heißen Stein.</p></li><li class="mo-ph__ch"><figure class="mo-ph__pic"><img src="assets/img/photo-f127138438-960.jpg" srcset="assets/img/photo-f127138438-500.jpg 500w, assets/img/photo-f127138438-960.jpg 960w" width="960" height="640" alt="Dönerfleisch mit Zwiebeln und Salat auf einem Teller" loading=lazy decoding="async" data-source="stand-in" style="object-position:50% 50%" ></figure><h3>Der Teller</h3><p>Mit Zwiebeln, Salat und Soße.</p></li></ol>
-    </div>
-  </section>
+<section class="ly" id="karte"><div class="wrap"><div class="em-head"><h2>Die Karte</h2><div class="em-tabs" role="tablist"><button role="tab" class="em-tab on" data-i="0" aria-selected="true">Döner</button><button role="tab" class="em-tab" data-i="1" aria-selected="false">Pizza</button><button role="tab" class="em-tab" data-i="2" aria-selected="false">Getränke</button></div></div><div class="em-panes"><div class="em-pane on" role="tabpanel"><ul class="rows"><li><span class="rows__name">Döner Tasche</span><span class="rows__value" data-assumed>7,00 €</span></li><li><span class="rows__name">Dürüm</span><span class="rows__value" data-assumed>7,50 €</span></li><li><span class="rows__name">Döner Teller</span><span class="rows__value" data-assumed>10,00 €</span></li><li><span class="rows__name">Vegetarisch</span><span class="rows__value" data-assumed>6,50 €</span></li></ul><figure><img src="assets/img/photo-f199124300-500.jpg" width="500" height="667" alt="Ein Dönerspieß dreht sich vor dem Grill" loading="lazy" decoding="async" data-source="stand-in" style="object-position:50% 50%"></figure></div><div class="em-pane" role="tabpanel"><ul class="rows"><li><span class="rows__name">Margherita</span><span class="rows__value" data-assumed>8,00 €</span></li><li><span class="rows__name">Salami</span><span class="rows__value" data-assumed>9,50 €</span></li><li><span class="rows__name">Funghi</span><span class="rows__value" data-assumed>9,00 €</span></li><li><span class="rows__name">Hawaii</span><span class="rows__value" data-assumed>9,50 €</span></li></ul><figure><img src="assets/img/photo-f23064597-960.jpg" srcset="assets/img/photo-f23064597-500.jpg 500w, assets/img/photo-f23064597-960.jpg 960w" sizes="(max-width: 1023px) 100vw, 50vw" width="960" height="640" alt="Eine Pizza wird auf der Schaufel in den Ofen geschoben" loading=lazy decoding="async" data-source="stand-in" style="object-position:50% 50%" ></figure></div><div class="em-pane" role="tabpanel"><ul class="rows"><li><span class="rows__name">Ayran</span><span class="rows__value" data-assumed>2,00 €</span></li><li><span class="rows__name">Cola 0,33 l</span><span class="rows__value" data-assumed>2,50 €</span></li><li><span class="rows__name">Wasser</span><span class="rows__value" data-assumed>2,00 €</span></li><li><span class="rows__name">Tee</span><span class="rows__value" data-assumed>2,00 €</span></li></ul><figure><img src="assets/img/photo-f114853886-500.jpg" width="500" height="667" alt="Döner im Brot mit Salat und Tomaten" loading="lazy" decoding="async" data-source="stand-in" style="object-position:50% 50%"></figure></div></div></div></section>
+<section class="em-split" id="roesterei"><div class="em-a"><p class="t-label">Der Spieß</p><h2>Frisch aufgesteckt, langsam gegart.</h2></div><div class="em-b"><p class="t-label">Der Ofen</p><h2>Pizza kommt direkt auf den heißen Stein.</h2></div></section>
+<section class="ly" id="visit"><div class="wrap em-visit"><div><h2>Besuch</h2><address>Mayen Innenstadt</address></div><dl class="hours" data-assumed><dt>Montag bis Samstag</dt><dd>11:00 bis 22:00</dd><dt>Sonntag</dt><dd>12:00 bis 21:00</dd><dt>Lieferung</dt><dd>bis 21:30</dd></dl><a class="btn btn--primary btn--xl" href="https://www.openstreetmap.org/search?query=Innenstadt%20Mayen">Anfahrt ansehen</a></div></section>
+<script>(function(){var T=document.querySelectorAll('.em-tab'),P=document.querySelectorAll('.em-pane');T.forEach(function(t){t.addEventListener('click',function(){T.forEach(function(x,i){var on=x===t;x.classList.toggle('on',on);x.setAttribute('aria-selected',on);P[i].classList.toggle('on',on)})})})})();</script>
 </main>
 
 <footer class="footer closing footer--visit" id="contact" aria-labelledby="close-h">
@@ -164,7 +164,7 @@ body{background:var(--p-bg);color:var(--p-ink)}
         </div>
         <div class="span-6 start-7 stack-4">
           <h4>Öffnungszeiten</h4>
-          <dl class="hours" data-assumed><dt>Montag bis Freitag</dt><dd>8:00 bis 18:00</dd><dt>Samstag</dt><dd>9:00 bis 17:00</dd><dt>Sonntag</dt><dd>10:00 bis 16:00</dd></dl>
+          <dl class="hours" data-assumed><dt>Montag bis Samstag</dt><dd>11:00 bis 22:00</dd><dt>Sonntag</dt><dd>12:00 bis 21:00</dd><dt>Lieferung</dt><dd>bis 21:30</dd></dl>
         </div>
       </div>
       <div class="footer__legal">
