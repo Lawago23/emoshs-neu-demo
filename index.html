@@ -110,6 +110,16 @@ main>section:not(.hero)>.wrap:not(.pz-split):not(.bk-tl):not(.im-grid):not(.em-v
 .em-visit .hours{display:grid;grid-template-columns:auto auto;gap:6px 24px}
 @media(max-width:900px){.em-pane.on{grid-template-columns:1fr}.em-split{grid-template-columns:1fr}.em-visit{grid-template-columns:1fr}.em-pane figure{order:-1}}
 
+.sk-foot{padding:clamp(56px,8vw,120px) 0 28px}
+.sk-foot .wrap{max-width:1296px;margin:0 auto;padding:0 var(--gutter,24px)}
+.sk-legal{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:56px;font-size:13px;opacity:.8;grid-column:1/-1}
+.f-em{background:#f5efe3;color:#0e3b3a}
+.f-em .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:end}
+.f-em-big{font:800 clamp(56px,10vw,160px)/.9 'Syne';letter-spacing:-.04em}.f-em-big i{color:#ff7a3c;font-style:normal}
+.f-em-r h2{font:700 28px 'Syne'}.f-em-r nav{display:flex;gap:18px;margin:18px 0 26px}.f-em-r nav a{font-weight:600;text-decoration:underline;text-underline-offset:5px}
+.f-em a{color:inherit}.f-em .btn{background:#ff7a3c;color:#0e1f1e;max-width:100%;padding:0 22px;font-size:17px}.f-em-r{min-width:0}
+@media(max-width:800px){.f-em .wrap{grid-template-columns:1fr}}
+.nav__link{border:1.5px solid rgba(245,239,227,.35);border-radius:999px;padding:6px 16px!important;margin-right:6px}.nav__link:hover{background:#ff7a3c;color:#0e1f1e!important;border-color:#ff7a3c}
 </style>
 <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
 <script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
@@ -150,30 +160,7 @@ main>section:not(.hero)>.wrap:not(.pz-split):not(.bk-tl):not(.im-grid):not(.em-v
 <script>(function(){var T=document.querySelectorAll('.em-tab'),P=document.querySelectorAll('.em-pane');T.forEach(function(t){t.addEventListener('click',function(){T.forEach(function(x,i){var on=x===t;x.classList.toggle('on',on);x.setAttribute('aria-selected',on);P[i].classList.toggle('on',on)})})})})();</script>
 </main>
 
-<footer class="footer closing footer--visit" id="contact" aria-labelledby="close-h">
-  <div class="wrap">
-    <div class="closing__cta close--type">
-      <div class="section-head"><h2 id="close-h">Zum Mitnehmen</h2><p class="t-lead">Anrufen und warm abholen.</p></div>
-      <a class="btn btn--primary btn--xl" href="https://www.openstreetmap.org/search?query=Innenstadt%20Mayen">Anfahrt ansehen<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
-    </div>
-    <div class="closing__links">
-      <div class="grid">
-        <div class="span-6 stack-4">
-          <address class="footer__address">Innenstadt, Mayen</address>
-          <p><a class="link" href="https://www.openstreetmap.org/search?query=Innenstadt%20Mayen">Anfahrt ansehen</a></p>
-        </div>
-        <div class="span-6 start-7 stack-4">
-          <h4>Öffnungszeiten</h4>
-          <dl class="hours" data-assumed><dt>Montag bis Samstag</dt><dd>11:00 bis 22:00</dd><dt>Sonntag</dt><dd>12:00 bis 21:00</dd><dt>Lieferung</dt><dd>bis 21:30</dd></dl>
-        </div>
-      </div>
-      <div class="footer__legal">
-        <span>&copy; 2026 Emosh's Döner & Pizza &nbsp; Beispieldaten</span>
-        <a class="credits" href="credits.html">Fotos von Wikimedia Commons</a>
-      </div>
-    </div>
-  </div>
-</footer>
+<footer class="sk-foot f-em" id="contact"><div class="wrap"><div class="f-em-l"><p class="f-em-big">Emosh's Döner<i>.</i></p><p>Anrufen und warm abholen.</p></div><div class="f-em-r"><h2>Zum Mitnehmen</h2><nav aria-label="Seiten"><a href="#karte">Karte</a><a href="#roesterei">Küche</a><a href="#visit">Besuch</a></nav><a class="btn btn--primary btn--xl" href="https://www.openstreetmap.org/search?query=Innenstadt%20Mayen">Anfahrt ansehen</a></div><div class="sk-legal"><span>&copy; 2026 Emosh's Döner & Pizza &nbsp; Beispieldaten</span><a class="credits" href="credits.html">Fotos von Wikimedia Commons</a></div></div></footer>
 <nav class="actionbar" aria-label="Schnellzugriff">
   <a class="btn btn--primary" href="https://www.openstreetmap.org/search?query=Innenstadt%20Mayen">Anfahrt</a>
 </nav>
